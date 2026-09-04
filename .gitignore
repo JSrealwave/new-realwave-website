@@ -1,0 +1,19 @@
+node_modules
+.DS_Store
+*.log
+.env
+.env.*
+dist
+.output
+.vinxi
+.nitro
+.tanstack
+.vite
+coverage
+
+# local working files, not the site
+artifacts/
+attachments/
+screenshots/
+new-favicon.jpg
+AGENTS.md
