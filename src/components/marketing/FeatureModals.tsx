@@ -16,14 +16,16 @@ export function FeatureModals() {
           <DialogTrigger asChild>
             <button
               type="button"
-              className="flex h-full flex-col rounded-lg bg-surface p-6 text-left shadow-[var(--shadow-border)] transition-shadow duration-150 hover:shadow-[var(--shadow-border-hover)]"
+              className="group flex h-full flex-col rounded-lg bg-surface p-6 text-left shadow-[var(--shadow-border)] transition-shadow duration-150 hover:shadow-[var(--shadow-border-hover)] focus-visible:shadow-[var(--shadow-border-hover)]"
             >
               <span className="text-xs font-bold tracking-[0.18em] text-navy uppercase">
                 {group.kicker}
               </span>
               <span className="mt-2 text-xl font-bold text-ink">{group.title}</span>
               <span className="mt-2 flex-1 text-sm text-muted">{group.summary}</span>
-              <span className="mt-4 text-sm font-bold text-navy">Open details</span>
+              <span className="mt-4 text-sm font-bold text-teal opacity-0 transition-opacity duration-150 group-hover:opacity-100 group-focus-visible:opacity-100">
+                …more
+              </span>
             </button>
           </DialogTrigger>
           <DialogContent>

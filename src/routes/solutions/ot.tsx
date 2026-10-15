@@ -4,7 +4,12 @@ import { PageHero, Section } from "@/components/layout/PageHero";
 import { Button } from "@/components/ui/button";
 import { posNames } from "@/lib/site";
 
-export const Route = createFileRoute("/solutions/ot")({ component: OtPage });
+export const Route = createFileRoute("/solutions/ot")({
+  head: () => ({
+    meta: [{ title: "Exception-based monitoring | Realwave" }],
+  }),
+  component: OtPage,
+});
 
 const cases = [
   {
@@ -29,9 +34,9 @@ function OtPage() {
   return (
     <main>
       <PageHero
-        kicker="OT exception monitoring"
-        title="Business systems, with video attached."
-        lede="POS, access, scales, alarms — fused so an exception is a clip and a transaction, not a hunt. This is why Intelligence is not a VMS checkbox."
+        kicker="Exceptions"
+        title="Exception-based monitoring."
+        lede="These are the events that should not have happened: a refund with no customer, a missed safety check, a door that should have stayed shut. The clip is attached to the event, so you review the exception instead of the whole shift."
         shot={{
           src: "/media/intel-pos.jpg",
           alt: "BlackBox POS cloud with live register cameras and receipts",
@@ -57,8 +62,9 @@ function OtPage() {
           ))}
         </div>
         <blockquote className="mt-10 max-w-2xl border-l-2 border-teal pl-5 text-lg">
-          “No human on refund” has caught 60%+ of cashier shrink in a production
-          site. Demo the tape — we will not print it as a guarantee.
+          At one site, catching refunds with no customer present accounted for more
+          than 60% of cashier shrink. We will walk through that workflow in a
+          demo. It is that site’s result, not a promise for yours.
         </blockquote>
       </Section>
       <CtaBand />

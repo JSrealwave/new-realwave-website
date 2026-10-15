@@ -3,7 +3,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Logo } from "@/components/brand/Logo";
 import { Button } from "@/components/ui/button";
-import { nav } from "@/lib/site";
+import { nav, SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
@@ -78,6 +78,15 @@ export function SiteHeader() {
           )}
         </nav>
         <div className="ml-auto hidden items-center gap-2 lg:flex">
+          <a
+            href={SITE.resourcesUrl}
+            className={cn(
+              "flex h-10 items-center px-3 text-sm font-bold",
+              onDark ? "text-inverse/80 hover:text-inverse" : "text-slate hover:text-navy",
+            )}
+          >
+            Resources
+          </a>
           <Button asChild variant={onDark ? "ghost" : "outline"} size="sm">
             <Link to="/download">Download Vue</Link>
           </Button>
@@ -120,6 +129,13 @@ export function SiteHeader() {
                   : null}
               </div>
             ))}
+            <a
+              href={SITE.resourcesUrl}
+              className="flex min-h-11 items-center border-b border-cool py-2 text-sm font-bold"
+              onClick={() => setOpen(false)}
+            >
+              Resources
+            </a>
             <div className="mt-3 flex flex-col gap-2">
               <Button asChild variant="outline">
                 <Link to="/download" onClick={() => setOpen(false)}>

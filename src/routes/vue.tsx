@@ -49,9 +49,9 @@ function VuePage() {
             </p>
           </div>
           <img
-            src="/media/vue-flex.jpg"
-            alt="Vue desktop client showing a multi-site convenience store"
-            className="media min-h-64 w-full rounded-lg object-cover object-left"
+            src="/media/vue-workflow.jpg"
+            alt="Vue Advanced Object Search open over a live multi-camera layout, on the same glass as the resource tree"
+            className="media w-full rounded-lg"
           />
         </div>
       </Section>
@@ -62,9 +62,10 @@ function VuePage() {
         </p>
         <h2 className="mt-2 max-w-2xl text-3xl">Open a group. Not a spreadsheet.</h2>
         <p className="mt-3 max-w-2xl text-muted">
-          Features grouped the way operators and admins think. Click a card for
-          the detail — install, live, record, review, rules, users, mobile,
-          health, developers.
+          Features grouped the way operators and admins think.{" "}
+          <strong className="font-bold text-teal">Click a card</strong> for the
+          detail — install, live, record, review, rules, users, mobile, health,
+          developers.
         </p>
         <div className="mt-10">
           <FeatureModals />

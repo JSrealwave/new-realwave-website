@@ -37,17 +37,17 @@ export function SiteFooter() {
           <ul className="mt-3 space-y-2 text-sm text-inverse/80">
             <li>
               <Link to="/solutions/gsoc" className="hover:text-inverse">
-                Proactive GSOC
+                GSOC
               </Link>
             </li>
             <li>
               <Link to="/solutions/ot" className="hover:text-inverse">
-                OT exceptions
+                Exceptions
               </Link>
             </li>
             <li>
               <Link to="/solutions/flow" className="hover:text-inverse">
-                Flow management
+                Flow
               </Link>
             </li>
             <li>

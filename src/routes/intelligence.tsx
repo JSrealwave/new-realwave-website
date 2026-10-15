@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { posNames } from "@/lib/site";
 
 export const Route = createFileRoute("/intelligence")({
+  head: () => ({
+    meta: [{ title: "AI video analytics | Realwave" }],
+  }),
   component: IntelligencePage,
 });
 
@@ -40,8 +43,8 @@ function IntelligencePage() {
     <main>
       <PageHero
         kicker="Intelligence"
-        title="Engineered into the deployment."
-        lede="Vue can run video-only — most systems start there. Cameras and servers can run detectors — most vendors stop there. Intelligence is the layer we design with you: models, POS and access fusion, rules that match this operation."
+        title="AI video analytics, engineered per site."
+        lede="AI video analytics is the category. Intelligence is the layer we design with you: models, POS and access fusion, rules that match this operation. Vue can run video-only — most systems start there. Detectors in a camera or a server are where most vendors stop."
         shot={{
           src: "/media/vue-pos.jpg",
           alt: "Live POS cameras synchronized with scrolling register receipts",
@@ -59,7 +62,7 @@ function IntelligencePage() {
         <div className="grid gap-8 lg:grid-cols-2">
           <article className="rounded-lg bg-surface p-8 shadow-[var(--shadow-border)]">
             <p className="text-xs font-bold tracking-[0.18em] text-navy uppercase">
-              Video AI · now
+              Skillsets · now
             </p>
             <ul className="mt-4 space-y-3 text-slate">
               <li>
@@ -75,6 +78,11 @@ function IntelligencePage() {
                 <strong className="text-ink">Plate.</strong> LPR, trailer, and
                 container IDs. Trailer ID at 95%, plate and container at 99% in
                 production use.
+              </li>
+              <li>
+                <strong className="text-ink">Action.</strong> Behavior on the
+                track — pose, not a new identity. Face stays off unless policy
+                turns it on.
               </li>
             </ul>
           </article>
@@ -153,7 +161,7 @@ function IntelligencePage() {
           A firmware pack cannot be your loss-prevention program.
         </h2>
         <p className="mt-4 max-w-2xl text-slate">
-          One-size analytics ship the same three classes to every door. Tailored
+          One-size analytics ship the same detector pack to every door. Tailored
           workflows start from the exception you actually care about — an unpaid
           refund, a trailer that does not match the manifest, a forced door at
           2 a.m. — and assemble models, joins, and rules until that exception is
@@ -176,7 +184,7 @@ function IntelligencePage() {
             <p className="mt-4 text-slate">
               VLM / NLP investigation is in beta. You can ask, we will not sell
               it as a finished SKU. It sits on the same event fabric as Track,
-              Face, and Plate — the path to the harness and agent cluster, not
+              Face, Plate, and Action — the path to the harness and agent cluster, not
               a rebrand of DIVE.
             </p>
           </div>

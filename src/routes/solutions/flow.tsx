@@ -3,7 +3,12 @@ import { CtaBand } from "@/components/marketing/CtaBand";
 import { PageHero, Section } from "@/components/layout/PageHero";
 import { Button } from "@/components/ui/button";
 
-export const Route = createFileRoute("/solutions/flow")({ component: FlowPage });
+export const Route = createFileRoute("/solutions/flow")({
+  head: () => ({
+    meta: [{ title: "People counting, queues, and occupancy | Realwave" }],
+  }),
+  component: FlowPage,
+});
 
 const cases = [
   {
@@ -20,7 +25,7 @@ const cases = [
   },
   {
     title: "Traffic and vehicles",
-    body: "Approaches, wrong-way, parking enforcement. Flow is a job, not a ‘smart city’ poster.",
+    body: "Approaches, wrong-way, and parking. The count is live, and you can alert when a threshold breaks.",
   },
 ];
 
@@ -28,9 +33,9 @@ function FlowPage() {
   return (
     <main>
       <PageHero
-        kicker="Flow management"
-        title="People and vehicles, counted."
-        lede="Queues, yards, occupancy, traffic. Track and Plate and maps — processed while the site is busy, not overnight in a report."
+        kicker="Flow"
+        title="People counting, queues, and occupancy."
+        lede="Flow is the status of the site: how many people or vehicles, which way they moved, and how long they waited. You see it while the floor, yard, or platform is busy — not in tomorrow’s report."
         shot={{
           src: "/media/intel-track-highway.jpg",
           alt: "Highway lanes with vehicle tracks and southbound and northbound zones",
@@ -53,8 +58,7 @@ function FlowPage() {
           ))}
         </div>
         <p className="mt-8 text-sm text-muted">
-          Proof verticals: retail, logistics, transit, campus. Traffic lives here,
-          not as its own product.
+          Stores, yards, transit halls, and campuses.
         </p>
       </Section>
       <CtaBand />

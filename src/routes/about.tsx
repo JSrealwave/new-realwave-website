@@ -21,7 +21,7 @@ function AboutPage() {
             <p className="mt-4 text-slate">
               Realwave is the intelligent video platform: Edge, Vue, Intelligence,
               Operate. Vue is built on Network Optix. Intelligence is the
-              engineered layer — Track, Face, Plate, POS, access — not a
+              engineered layer — Track, Face, Plate, Action, POS, access — not a
               one-size pack. Operate is how ePlus runs private instances.
             </p>
             <p className="mt-4 text-slate">

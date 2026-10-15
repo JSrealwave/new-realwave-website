@@ -5,6 +5,7 @@ export const SITE = {
   email: "john@realwave.com",
   trialUrl: "https://vue.realwave.io/",
   cloudUrl: "https://vue.realwave.io/",
+  resourcesUrl: "https://resources.gorealwave.com/login",
 };
 
 export const nav = [
@@ -19,18 +20,18 @@ export const nav = [
     children: [
       {
         href: "/solutions/gsoc",
-        label: "Proactive GSOC",
-        desc: "Intrusion, access, verify, forensics.",
+        label: "GSOC",
+        desc: "Video, access, and alarms. One site or many.",
       },
       {
         href: "/solutions/ot",
-        label: "OT exceptions",
-        desc: "POS, process, PPE, diversion.",
+        label: "Exceptions",
+        desc: "The events that should not have happened.",
       },
       {
         href: "/solutions/flow",
-        label: "Flow management",
-        desc: "Queues, yards, occupancy, traffic.",
+        label: "Flow",
+        desc: "Counts, queues, and how long things wait.",
       },
     ],
   },
@@ -72,22 +73,22 @@ export const jobs = [
   {
     href: "/solutions/gsoc",
     kicker: "01",
-    name: "Proactive GSOC",
-    lede: "Intrusion, access, aggression, remote verification, and forensics — video as the unifying screen.",
+    name: "GSOC",
+    lede: "Video, access, and alarms — one site or many.",
     image: "/media/intel-track-lot.jpg",
   },
   {
     href: "/solutions/ot",
     kicker: "02",
-    name: "OT exception monitoring",
-    lede: "POS, process, PPE, and diversion — business systems fused with video so exceptions are real.",
+    name: "Exceptions",
+    lede: "The events that should not have happened.",
     image: "/media/retail.jpg",
   },
   {
     href: "/solutions/flow",
     kicker: "03",
-    name: "Flow management",
-    lede: "Queues, yards, occupancy, and traffic — people and vehicles counted, not guessed.",
+    name: "Flow",
+    lede: "Counts, queues, and how long things wait.",
     image: "/media/intel-track-highway.jpg",
   },
 ] as const;
@@ -208,4 +209,37 @@ export const verticals = [
   "Healthcare",
   "Financial",
   "SLED",
+] as const;
+
+export const verticalLenses = [
+  {
+    name: "Retail",
+    image: "/media/retail.jpg",
+    imageAlt: "Retail stock floor with boxed inventory on industrial shelving",
+    proof: "Yesway",
+    scene: null,
+    lines: {
+      "/solutions/gsoc":
+        "Shoplifting, repeat offenders, and after-hours alarms, verified on the store cameras.",
+      "/solutions/ot":
+        "Refunds, voids, and sweethearting. The receipt and the clip come together.",
+      "/solutions/flow":
+        "Checkout lines, dwell, and how people move through the store.",
+    },
+  },
+  {
+    name: "Logistics",
+    image: "/media/yard.jpg",
+    imageAlt: "Container yard and dock doors seen from above",
+    proof: null,
+    scene: "Yard and dock",
+    lines: {
+      "/solutions/gsoc":
+        "Gates, docks, and the fence. An intrusion opens the camera instead of sending a truck.",
+      "/solutions/ot":
+        "A trailer or container that does not match the manifest, with the clip on the same event.",
+      "/solutions/flow":
+        "Yard occupancy, dock wait, and which direction the trucks are moving.",
+    },
+  },
 ] as const;

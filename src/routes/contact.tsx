@@ -11,7 +11,7 @@ function ContactPage() {
       <PageHero
         kicker="Contact"
         title="Request a demo."
-        lede="Tell us the job — GSOC, OT exception, or flow — and how many cameras you already have."
+        lede="Tell us the job — GSOC, exceptions, or flow — and how many cameras you already have."
         compact
       />
       <Section>

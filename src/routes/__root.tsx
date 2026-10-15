@@ -16,16 +16,16 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Realwave processes video while you record it. Vue unifies video and access. Intelligence is engineered per site. ePlus operates the instance.",
+          "Realwave is AI video analytics that processes video while you record it. Vue unifies video and access. Intelligence is engineered per site. ePlus operates the instance.",
       },
       { name: "theme-color", content: "#12498A" },
     ],
     links: [
-      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32.png?v=2" },
-      { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16.png?v=2" },
-      { rel: "icon", type: "image/png", sizes: "192x192", href: "/favicon-192.png?v=2" },
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg?v=2" },
-      { rel: "apple-touch-icon", href: "/apple-touch-icon.png?v=2" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32.png" },
+      { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16.png" },
+      { rel: "icon", type: "image/png", sizes: "192x192", href: "/favicon-192.png" },
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
       { rel: "stylesheet", href: appCss },
       { rel: "manifest", href: "/__grok/manifest.webmanifest" },
       {

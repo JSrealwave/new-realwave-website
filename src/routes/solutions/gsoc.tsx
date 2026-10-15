@@ -3,7 +3,12 @@ import { CtaBand } from "@/components/marketing/CtaBand";
 import { PageHero, Section } from "@/components/layout/PageHero";
 import { Button } from "@/components/ui/button";
 
-export const Route = createFileRoute("/solutions/gsoc")({ component: GsocPage });
+export const Route = createFileRoute("/solutions/gsoc")({
+  head: () => ({
+    meta: [{ title: "GSOC | Realwave" }],
+  }),
+  component: GsocPage,
+});
 
 const cases = [
   {
@@ -16,7 +21,7 @@ const cases = [
   },
   {
     title: "Aggression, loitering, weapons",
-    body: "Behavior models on the Intelligence layer, alarm layout in Vue, notify through Operate.",
+    body: "Action on the track — pose, not a new identity. Alarm layout in Vue, notify through Operate. Face only where policy allows.",
   },
   {
     title: "Remote verify",
@@ -32,9 +37,9 @@ function GsocPage() {
   return (
     <main>
       <PageHero
-        kicker="Proactive GSOC"
-        title="Video as the unifying screen."
-        lede="AI-powered video is the number-one PhySec spend item CSOs name for the next two years. Realwave is how that spend becomes process-while-record, not another wall of dark cameras."
+        kicker="GSOC"
+        title="Video, access, and alarms on one screen."
+        lede="A GSOC watches one site or many. AI video analytics flags what is worth opening. The operator verifies it on the same screen, instead of driving out to a recorder to find out what happened."
         image="/media/gsoc.jpg"
         shot={{
           src: "/media/vue-events.jpg",
@@ -65,8 +70,7 @@ function GsocPage() {
           />
         </div>
         <p className="mt-8 text-sm text-muted">
-          Proof verticals: campus, SLED, healthcare, financial branches, transit
-          hubs. Campus is a GSOC deployment, not a seventh category.
+          Campus, healthcare, financial branches, transit, and public safety. One site or many.
         </p>
       </Section>
       <CtaBand />
