@@ -60,12 +60,11 @@ function VuePage() {
         <p className="text-xs font-bold tracking-[0.22em] text-navy uppercase">
           Enterprise VMS
         </p>
-        <h2 className="mt-2 max-w-2xl text-3xl">Open a group. Not a spreadsheet.</h2>
+        <h2 className="mt-2 max-w-2xl text-3xl">What the operator desk already includes.</h2>
         <p className="mt-3 max-w-2xl text-muted">
-          Features grouped the way operators and admins think.{" "}
-          <strong className="font-bold text-teal">Click a card</strong> for the
-          detail — install, live, record, review, rules, users, mobile, health,
-          developers.
+          Live video, recording, alarms, and the rights around them.{" "}
+          <strong className="font-bold text-navy">Click a card</strong> for the
+          detail.
         </p>
         <div className="mt-10">
           <FeatureModals />

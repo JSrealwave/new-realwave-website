@@ -1,4 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import {
+  Bell,
+  CarFront,
+  DoorOpen,
+  PersonStanding,
+  Receipt,
+  ScanFace,
+  ScanSearch,
+  type LucideIcon,
+} from "lucide-react";
 import { CtaBand } from "@/components/marketing/CtaBand";
 import { PageHero, Section } from "@/components/layout/PageHero";
 import { Button } from "@/components/ui/button";
@@ -11,30 +21,64 @@ export const Route = createFileRoute("/intelligence")({
   component: IntelligencePage,
 });
 
+const skillsets: { icon: LucideIcon; label: string }[] = [
+  { icon: ScanSearch, label: "Track" },
+  { icon: ScanFace, label: "Face" },
+  { icon: CarFront, label: "Plate" },
+  { icon: PersonStanding, label: "Action" },
+];
+
+const integrations: { icon: LucideIcon; label: string }[] = [
+  { icon: Receipt, label: "POS" },
+  { icon: DoorOpen, label: "Access" },
+  { icon: Bell, label: "Alarms" },
+];
+
 const proofs = [
   {
     src: "/media/intel-track-lot.jpg",
     kicker: "Track",
-    caption: "People and vehicles on the stream — zones, dwell, direction.",
+    caption:
+      "People, vehicles, loitering, bags, and direction. Zones, dwell, and which way they move.",
     alt: "Night parking lot with person and vehicle tracks and a walkway zone",
   },
   {
     src: "/media/intel-face.jpg",
     kicker: "Face",
-    caption: "Watchlists and attributes on the Vue glass — where policy allows.",
+    caption:
+      "Watchlists and identity where policy allows. Attributes on the Vue glass, not a camera that decides for you.",
     alt: "Vue live view with a presence zone and face matches in the sidebar",
   },
   {
     src: "/media/intel-plate.jpg",
     kicker: "Plate",
-    caption: "Container, trailer, and plate IDs against the record — 99% in production use.",
+    caption:
+      "LPR, trailer, and container IDs against the record. Trailer ID at 95%, plate and container at 99% in production use.",
     alt: "Container ID read FCIU 9644848 with OCR confidence on the Intelligence console",
   },
   {
     src: "/media/intel-pos.jpg",
     kicker: "POS",
-    caption: "Registers fused with the cameras. 167+ systems in the library.",
+    caption: `Registers fused with the cameras. 167+ systems. Named today: ${posNames.join(", ")}.`,
     alt: "BlackBox POS cloud with two live register cameras and scrolling receipts",
+  },
+] as const;
+
+const also = [
+  {
+    kicker: "Action",
+    caption:
+      "Behavior on the track — pose, not a new identity. Face stays off unless policy turns it on.",
+  },
+  {
+    kicker: "Access",
+    caption:
+      "IMRON with Mercury and dormakaba panels. Door events land on the same timeline as video.",
+  },
+  {
+    kicker: "Alarms",
+    caption:
+      "Exception workflows that bookmark, notify, and escalate when the event is worth opening.",
   },
 ] as const;
 
@@ -62,47 +106,34 @@ function IntelligencePage() {
         <div className="grid gap-8 lg:grid-cols-2">
           <article className="rounded-lg bg-surface p-8 shadow-[var(--shadow-border)]">
             <p className="text-xs font-bold tracking-[0.18em] text-navy uppercase">
-              Skillsets · now
+              Skillsets
             </p>
-            <ul className="mt-4 space-y-3 text-slate">
-              <li>
-                <strong className="text-ink">Track.</strong> People, vehicles,
-                loitering, bags, direction — the GSOC and flow workhorse.
-              </li>
-              <li>
-                <strong className="text-ink">Face.</strong> Watchlists and
-                identity where policy allows. Demographics fused with POS in
-                retail, carefully.
-              </li>
-              <li>
-                <strong className="text-ink">Plate.</strong> LPR, trailer, and
-                container IDs. Trailer ID at 95%, plate and container at 99% in
-                production use.
-              </li>
-              <li>
-                <strong className="text-ink">Action.</strong> Behavior on the
-                track — pose, not a new identity. Face stays off unless policy
-                turns it on.
-              </li>
+            <ul className="mt-6 grid grid-cols-2 gap-6 sm:grid-cols-4">
+              {skillsets.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <li key={item.label} className="flex flex-col items-center text-center">
+                    <Icon aria-hidden className="size-8 text-navy" />
+                    <span className="mt-2 text-sm font-bold text-ink">{item.label}</span>
+                  </li>
+                );
+              })}
             </ul>
           </article>
           <article className="rounded-lg bg-surface p-8 shadow-[var(--shadow-border)]">
             <p className="text-xs font-bold tracking-[0.18em] text-navy uppercase">
-              OT fusion · now
+              Integrations
             </p>
-            <ul className="mt-4 space-y-3 text-slate">
-              <li>
-                <strong className="text-ink">POS.</strong> 167+ systems. Named
-                today: {posNames.join(", ")}.
-              </li>
-              <li>
-                <strong className="text-ink">Access.</strong> IMRON with Mercury
-                and dormakaba panels — door events on the same timeline as video.
-              </li>
-              <li>
-                <strong className="text-ink">Rules.</strong> Exception workflows
-                that bookmark, notify, and escalate — not a detector demo.
-              </li>
+            <ul className="mt-6 grid grid-cols-3 gap-6">
+              {integrations.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <li key={item.label} className="flex flex-col items-center text-center">
+                    <Icon aria-hidden className="size-8 text-navy" />
+                    <span className="mt-2 text-sm font-bold text-ink">{item.label}</span>
+                  </li>
+                );
+              })}
             </ul>
           </article>
         </div>
@@ -127,6 +158,19 @@ function IntelligencePage() {
                   <p className="mt-1 text-sm text-inverse/80">{p.caption}</p>
                 </figcaption>
               </figure>
+            </li>
+          ))}
+        </ul>
+        <ul className="mt-5 grid gap-5 md:grid-cols-3">
+          {also.map((item) => (
+            <li
+              key={item.kicker}
+              className="rounded-lg bg-surface p-5 shadow-[var(--shadow-border)]"
+            >
+              <p className="text-[11px] font-bold tracking-[0.18em] text-navy uppercase">
+                {item.kicker}
+              </p>
+              <p className="mt-1 text-sm text-muted">{item.caption}</p>
             </li>
           ))}
         </ul>
