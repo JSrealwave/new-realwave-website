@@ -98,9 +98,10 @@ Retail, logistics, transit, campus, healthcare, financial, and SLED are **where*
 
 Video AI, now:
 
-- **Track** — people, vehicles, loitering, bags, direction, dwell, zones. GSOC and flow workhorse.
-- **Face** — watchlists and attributes on the Vue glass, where policy allows. Demographics fused with POS only carefully.
-- **Plate** — LPR, trailer, and container IDs.
+- **Track** — Objects, appearance, trip line, intrusion, exclusion, count, dwell, crowd. People, vehicles, bags, direction.
+- **Face** — Access, POI watch, forensic search. Where policy allows. Not a camera that decides identity on its own.
+- **Plate** — LPR, trailer ID, barcode, DOT ID, airline tail ID, ULD codes.
+- **Action** — Fall, fighting, running, standing, sitting, lying down. Behavior on the track. Face stays off unless policy turns it on.
 
 OT fusion, now:
 

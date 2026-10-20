@@ -213,6 +213,10 @@ export const customerLogos = [
   },
 ] as const;
 
+export function marketSlug(name: string) {
+  return name.toLowerCase().replace(/\s+/g, "-");
+}
+
 export const verticalUseCases = [
   {
     name: "Retail",

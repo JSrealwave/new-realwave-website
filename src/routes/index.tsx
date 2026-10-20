@@ -57,7 +57,7 @@ function Home() {
             Three jobs
           </p>
           <h2 className="mt-2 max-w-2xl text-3xl sm:text-4xl">
-            Security, operations, and flow — not six identical industry pages.
+            Watch the site, catch the exception, measure the flow.
           </h2>
           <div className="mt-10 grid gap-5 lg:grid-cols-3">
             {jobs.map((job) => (

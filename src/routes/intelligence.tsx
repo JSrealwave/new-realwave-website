@@ -27,11 +27,36 @@ export const Route = createFileRoute("/intelligence")({
   component: IntelligencePage,
 });
 
-const skillsets: { icon: LucideIcon; label: string }[] = [
-  { icon: ScanSearch, label: "Track" },
-  { icon: ScanFace, label: "Face" },
-  { icon: CarFront, label: "Plate" },
-  { icon: PersonStanding, label: "Action" },
+const skillsets: { icon: LucideIcon; label: string; skills: string[] }[] = [
+  {
+    icon: ScanSearch,
+    label: "Track",
+    skills: [
+      "Objects",
+      "Appearance",
+      "Trip line",
+      "Intrusion",
+      "Exclusion",
+      "Count",
+      "Dwell",
+      "Crowd",
+    ],
+  },
+  {
+    icon: ScanFace,
+    label: "Face",
+    skills: ["Access", "POI watch", "Forensic search"],
+  },
+  {
+    icon: CarFront,
+    label: "Plate",
+    skills: ["LPR", "Trailer ID", "Barcode", "DOT ID", "Airline tail ID", "ULD codes"],
+  },
+  {
+    icon: PersonStanding,
+    label: "Action",
+    skills: ["Fall", "Fighting", "Running", "Standing", "Sitting", "Lying down"],
+  },
 ];
 
 const integrations: { icon: LucideIcon; label: string }[] = [
@@ -120,13 +145,25 @@ function IntelligencePage() {
             <p className="text-xs font-bold tracking-[0.18em] text-navy uppercase">
               Skillsets
             </p>
-            <ul className="mt-6 grid grid-cols-2 gap-6 sm:grid-cols-4">
+            <ul className="mt-6 space-y-5">
               {skillsets.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <li key={item.label} className="flex flex-col items-center text-center">
-                    <Icon aria-hidden className="size-8 text-navy" />
-                    <span className="mt-2 text-sm font-bold text-ink">{item.label}</span>
+                  <li key={item.label}>
+                    <div className="flex items-center gap-2">
+                      <Icon aria-hidden className="size-5 text-navy" />
+                      <span className="text-sm font-bold text-ink">{item.label}</span>
+                    </div>
+                    <ul className="mt-2 flex flex-wrap gap-1.5">
+                      {item.skills.map((skill) => (
+                        <li
+                          key={skill}
+                          className="rounded-full bg-cool px-2.5 py-1 text-xs font-bold text-navy"
+                        >
+                          {skill}
+                        </li>
+                      ))}
+                    </ul>
                   </li>
                 );
               })}

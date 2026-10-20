@@ -1,19 +1,43 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { CtaBand } from "@/components/marketing/CtaBand";
 import { PageHero, Section } from "@/components/layout/PageHero";
-import { jobs, verticalUseCases } from "@/lib/site";
+import { jobs, marketSlug, verticalUseCases } from "@/lib/site";
 
 export const Route = createFileRoute("/solutions/")({
+  validateSearch: (search: Record<string, unknown>): { market?: string } => {
+    if (typeof search.market !== "string" || search.market.length === 0) return {};
+    return { market: search.market };
+  },
   component: SolutionsIndex,
 });
 
-function SolutionsIndex() {
-  const [name, setName] = useState<(typeof verticalUseCases)[number]["name"]>(
-    "Retail",
+function marketName(slug: string | undefined) {
+  return (
+    verticalUseCases.find((item) => marketSlug(item.name) === slug)?.name ?? "Retail"
   );
+}
+
+function SolutionsIndex() {
+  const { market } = Route.useSearch();
+  const navigate = Route.useNavigate();
+  const [name, setName] = useState(() => marketName(market));
   const vertical = verticalUseCases.find((item) => item.name === name) ?? verticalUseCases[0];
+
+  useEffect(() => {
+    setName(marketName(market));
+  }, [market]);
+
+  function selectMarket(next: (typeof verticalUseCases)[number]["name"]) {
+    setName(next);
+    navigate({
+      search: { market: marketSlug(next) },
+      hash: "markets",
+      replace: true,
+      resetScroll: false,
+    });
+  }
 
   return (
     <main>
@@ -49,7 +73,7 @@ function SolutionsIndex() {
           ))}
         </div>
 
-        <div className="mt-14">
+        <div id="markets" className="mt-14 scroll-mt-24">
           <p className="text-xs font-bold tracking-[0.22em] text-navy uppercase">
             Where this shows up
           </p>
@@ -62,7 +86,7 @@ function SolutionsIndex() {
                   type="button"
                   role="tab"
                   aria-selected={selected}
-                  onClick={() => setName(item.name)}
+                  onClick={() => selectMarket(item.name)}
                   className={
                     selected
                       ? "rounded-full bg-navy px-4 py-2 text-sm font-bold text-white"
