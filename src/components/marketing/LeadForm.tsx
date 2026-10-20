@@ -84,7 +84,7 @@ export function LeadForm({
       <Button type="submit" variant="navy" className="justify-self-start">
         Send
       </Button>
-      <p className="text-xs text-muted">POC inbox: {SITE.email}. No marketing list.</p>
+      <p className="text-xs text-muted">We reply from {SITE.email}. No marketing list.</p>
     </form>
   );
 }

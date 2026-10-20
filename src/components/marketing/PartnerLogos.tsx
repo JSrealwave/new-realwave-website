@@ -6,11 +6,13 @@ function LogoCard({
   src,
   href,
   hidden,
+  large,
 }: {
   name: string;
   src: string;
   href: string;
   hidden?: boolean;
+  large?: boolean;
 }) {
   return (
     <li className="w-[11.5rem] shrink-0" aria-hidden={hidden || undefined}>
@@ -28,7 +30,10 @@ function LogoCard({
         <img
           src={src}
           alt=""
-          className="max-h-10 w-auto max-w-[9.25rem] object-contain"
+          className={cn(
+            "w-auto object-contain",
+            large ? "max-h-14 max-w-[10rem]" : "max-h-10 max-w-[9.25rem]",
+          )}
         />
       </a>
     </li>

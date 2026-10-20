@@ -22,18 +22,18 @@ function AboutPage() {
               Realwave is the intelligent video platform: Edge, Vue, Intelligence,
               Operate. Vue is built on Network Optix. Intelligence is the
               engineered layer — Track, Face, Plate, Action, POS, access — not a
-              one-size pack. Operate is how ePlus runs private instances.
+              one-size-fits-all pack. Operate is how ePlus runs private instances.
             </p>
             <p className="mt-4 text-slate">
               ePlus brings a thousand customer-facing engineers and a bench in
               NVIDIA, Nutanix, NetApp, Cisco, Palo Alto. The cameras were never
-              the moat. Keeping inference alive, and the instance current, is.
+              the advantage. Keeping inference alive, and the instance current, is.
             </p>
             <Button asChild variant="navy" className="mt-6">
               <Link to="/contact">Talk to us</Link>
             </Button>
           </div>
-          <CustomerLogos kicker="Public references" compact />
+          <CustomerLogos kicker="In production" compact />
         </div>
       </Section>
       <CtaBand />

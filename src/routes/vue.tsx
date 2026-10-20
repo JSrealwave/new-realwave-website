@@ -12,7 +12,7 @@ function VuePage() {
       <PageHero
         kicker="Vue"
         title="The system operators live in."
-        lede="Enterprise VMS: Flex GRID, failover, hive, maps, mobile. Access control on the same glass. Complete as video-only — Intelligence is optional, not a checkbox you cannot turn off."
+        lede="Enterprise VMS: Flex GRID, failover, hive, maps, mobile. Access control on the same glass. Run it as video only, and add Intelligence when a workflow needs it."
         shot={{
           src: "/media/vue-flex.jpg",
           alt: "Vue Flex GRID live layout with resource tree and archive timeline",
@@ -36,11 +36,10 @@ function VuePage() {
               Video and access, one operator workflow.
             </h2>
             <p className="mt-4 text-slate">
-              Vue is the Realwave OEM of Network Optix — said once, as trust.
-              The rest of this page is what you actually run: layouts, archive,
-              rules, health. IMRON UnityIS (Mercury, dormakaba, and the open
-              panel list) lands as events on the same timeline, not a second
-              client.
+              Vue is the Realwave version of Network Optix. Operators run layouts,
+              archive, rules, and health from this client. IMRON UnityIS (Mercury,
+              dormakaba, and the open panel list) lands as events on the same
+              timeline, not a second screen.
             </p>
             <p className="mt-4 text-slate">
               45,000+ devices from 790+ manufacturers. LDAP, video wall,
@@ -99,24 +98,23 @@ function VuePage() {
             <h3 className="text-xl">Maps and GIS</h3>
             <p className="mt-2 text-sm text-muted">
               Floor plans as layout backgrounds, cameras on the map, GPS where
-              the site is a campus or a yard — not a camera tree pretending to
-              be space.
+              the site is a campus or a yard. Operators move through the site
+              instead of a list of camera names.
             </p>
           </article>
           <article className="rounded-lg bg-surface p-6 shadow-[var(--shadow-border)]">
             <h3 className="text-xl">Cloud and hybrid</h3>
             <p className="mt-2 text-sm text-muted">
-              Realwave Cloud connects Vue sites without port forwarding. Hybrid
-              means you place record, process, and archive — not a single SaaS
-              shape for every customer.
+              Realwave Cloud connects Vue sites without opening inbound ports.
+              Hybrid means you choose where recording, processing, and archive
+              live.
             </p>
           </article>
           <article className="rounded-lg bg-surface p-6 shadow-[var(--shadow-border)]">
-            <h3 className="text-xl">AI Manager</h3>
+            <h3 className="text-xl">Model pipeline</h3>
             <p className="mt-2 text-sm text-muted">
-              Cross-hardware pipeline: Intel, AMD, ARM, NVIDIA, Hailo. Vue
-              consumes the events. Intelligence decides the models. That split
-              is the point.
+              The same pipeline runs on Intel, AMD, ARM, NVIDIA, and Hailo. Vue
+              shows the events. Intelligence chooses the models.
             </p>
           </article>
         </div>

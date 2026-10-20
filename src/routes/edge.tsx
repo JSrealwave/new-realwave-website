@@ -12,15 +12,15 @@ const items = [
   },
   {
     title: "Servers and GPU",
-    body: "REX and GPU-ready appliances for sites that need recording and inference on the same box. Sized for peak, not the idle hour. Spec sheets land as SKUs; architecture first on this page.",
+    body: "REX and GPU-ready appliances when recording and inference share a box. Sized for the busy minute, not the idle hour.",
   },
   {
     title: "LiDAR",
-    body: "Privacy-first 3D detection for perimeters and occupancy. Used with video verify to cut false alarms — up to 80% in LiDAR-plus-video deployments, not as a generic “less scrubbing” claim.",
+    body: "Privacy-first 3D detection for perimeters and occupancy. Used with video to verify alarms — up to 80% fewer false alarms in those LiDAR-plus-video deployments.",
   },
   {
     title: "Camera-to-cloud",
-    body: "Outbound-only path, no port-forward hobby. Small sites can skip the local server. Large campuses keep local record and process, and send what Operate needs.",
+    body: "Outbound only. No inbound ports to open. Small sites can skip the local server. Large campuses keep local recording and processing, and send what Operate needs.",
   },
 ];
 
@@ -30,7 +30,7 @@ export function EdgePage() {
       <PageHero
         kicker="Edge"
         title="Where the stream becomes a decision."
-        lede="Edge is sensors and compute — not the brains and not the glass. Models run here. Intelligence decides which ones, and Vue is where operators see the result."
+        lede="Edge is the cameras and the computers on site. Models run here. Intelligence decides which ones, and operators see the result in Vue."
         shot={{
           src: "/media/edge-kit.jpg",
           alt: "Realwave NVIDIA appliance, REX-Mini, cameras, and Quanergy LiDAR",
@@ -55,8 +55,8 @@ export function EdgePage() {
             <h2 className="text-3xl">Hardware is optional. Placement is not.</h2>
             <p className="mt-4 text-slate">
               Bring your own ONVIF cameras. Add Realwave cameras and GPU servers
-              when the use case needs them. Software and Operate sell to every
-              site; Edge SKUs show up when we are also the iron.
+              when the use case needs them. Software and Operate are on every
+              site. Edge hardware is there when you want us to supply it.
             </p>
             <p className="mt-4 text-slate">
               The design rule: size for the minute inference is needed most. An

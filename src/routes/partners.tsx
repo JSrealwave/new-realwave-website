@@ -39,18 +39,17 @@ function PartnersPage() {
             <PillGroup title="Sensors" items={partners.sensors} />
             <PillGroup title="Compute" items={partners.compute} />
             <PillGroup title="Analytics" items={partners.analytics} />
-            <PillGroup title="PhySec ecosystem" items={partners.physec} />
+            <PillGroup title="Physical security" items={partners.physec} />
             <p className="text-sm text-muted">
-              IMRON sits with access and unified management — on the Vue page —
-              not as a detector vendor. Digital Watchdog and Velasea class
-              hardware shows up when we are also the iron. Quanergy is LiDAR —
-              privacy-first detection on the Edge page, not a camera SKU.
+              IMRON is access control, on the same timeline as the video. Digital
+              Watchdog and Velasea are the cameras and servers when we supply the
+              hardware. Quanergy is LiDAR, for detection that does not need a face.
             </p>
           </div>
           <div className="rounded-lg bg-surface p-6 shadow-[var(--shadow-border)] sm:p-8">
             <h2 className="text-2xl">Become a partner</h2>
             <p className="mt-2 text-sm text-muted">
-              Reseller program, per-channel software, Operate as an annuity.
+              Reseller program, per-channel software, and Operate as a recurring service.
               Tell us how you sell.
             </p>
             <div className="mt-6">

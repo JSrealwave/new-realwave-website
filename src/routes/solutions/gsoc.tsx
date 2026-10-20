@@ -21,7 +21,7 @@ const cases = [
   },
   {
     title: "Aggression, loitering, weapons",
-    body: "Action on the track — pose, not a new identity. Alarm layout in Vue, notify through Operate. Face only where policy allows.",
+    body: "Behavior on the person or vehicle already being tracked. It does not create a new identity. Face stays off unless policy allows it.",
   },
   {
     title: "Remote verify",
@@ -40,10 +40,9 @@ function GsocPage() {
         kicker="GSOC"
         title="Video, access, and alarms on one screen."
         lede="A GSOC watches one site or many. AI video analytics flags what is worth opening. The operator verifies it on the same screen, instead of driving out to a recorder to find out what happened."
-        image="/media/gsoc.jpg"
         shot={{
-          src: "/media/vue-events.jpg",
-          alt: "Person object search across exterior cameras with clip preview",
+          src: "/media/gsoc.jpg",
+          alt: "Operators at a video wall in a monitoring room",
         }}
       >
         <Button asChild size="lg">
@@ -61,13 +60,6 @@ function GsocPage() {
               <p className="mt-2 text-sm text-muted">{c.body}</p>
             </article>
           ))}
-        </div>
-        <div className="mt-10 overflow-hidden rounded-lg bg-ink">
-          <img
-            src="/media/intel-track-lot.jpg"
-            alt="Parking lot at night with a person track and a walkway zone"
-            className="w-full object-cover object-center"
-          />
         </div>
         <p className="mt-8 text-sm text-muted">
           Campus, healthcare, financial branches, transit, and public safety. One site or many.

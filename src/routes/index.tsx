@@ -117,7 +117,7 @@ function Home() {
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
               <p className="text-xs font-bold tracking-[0.22em] text-navy uppercase">
-                Open, not one-size
+                Open, not one-size-fits-all
               </p>
               <h2 className="mt-2 text-3xl sm:text-4xl">
                 Keep the cameras. Change what happens to the stream.
@@ -136,7 +136,7 @@ function Home() {
                   Inference sized for peak, not idle-hour averages.
                 </li>
                 <li>
-                  <strong className="text-ink">Tailored vs one-size.</strong>{" "}
+                  <strong className="text-ink">Tailored vs one-size-fits-all.</strong>{" "}
                   Workflows engineered into the deployment, not a firmware pack.
                 </li>
               </ul>

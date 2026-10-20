@@ -3,15 +3,17 @@ import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { CtaBand } from "@/components/marketing/CtaBand";
 import { PageHero, Section } from "@/components/layout/PageHero";
-import { jobs, verticalLenses, verticals } from "@/lib/site";
+import { jobs, verticalUseCases } from "@/lib/site";
 
 export const Route = createFileRoute("/solutions/")({
   component: SolutionsIndex,
 });
 
 function SolutionsIndex() {
-  const [vertical, setVertical] = useState<string | null>(null);
-  const lens = verticalLenses.find((item) => item.name === vertical);
+  const [name, setName] = useState<(typeof verticalUseCases)[number]["name"]>(
+    "Retail",
+  );
+  const vertical = verticalUseCases.find((item) => item.name === name) ?? verticalUseCases[0];
 
   return (
     <main>
@@ -21,61 +23,7 @@ function SolutionsIndex() {
         lede="Security runs a GSOC: video, access, and alarms, for one site or many. Loss prevention and operations review exceptions — the events that should not have happened. Stores, yards, and facilities watch flow: counts, queues, and how long things wait."
       />
       <Section>
-        <p className="text-xs font-bold tracking-[0.22em] text-navy uppercase">
-          Where this shows up
-        </p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {verticals.map((name) => {
-            const ready = verticalLenses.some((item) => item.name === name);
-            const selected = vertical === name;
-            if (!ready) {
-              return (
-                <span
-                  key={name}
-                  className="rounded-full bg-cool px-4 py-2 text-sm font-bold text-navy"
-                >
-                  {name}
-                </span>
-              );
-            }
-            return (
-              <button
-                key={name}
-                type="button"
-                aria-pressed={selected}
-                onClick={() => setVertical(selected ? null : name)}
-                className={
-                  selected
-                    ? "rounded-full bg-navy px-4 py-2 text-sm font-bold text-white"
-                    : "rounded-full bg-cool px-4 py-2 text-sm font-bold text-navy hover:bg-navy hover:text-white"
-                }
-              >
-                {name}
-              </button>
-            );
-          })}
-        </div>
-
-        {lens ? (
-          <figure className="mt-8 overflow-hidden rounded-lg bg-ink shadow-[var(--shadow-border)]">
-            <img
-              src={lens.image}
-              alt={lens.imageAlt}
-              className="media h-64 w-full object-cover object-center"
-            />
-            <figcaption className="px-4 py-3 text-sm text-inverse/80">
-              {lens.proof ? (
-                <span className="font-bold tracking-[0.18em] text-teal uppercase">
-                  {lens.proof}
-                </span>
-              ) : (
-                lens.scene
-              )}
-            </figcaption>
-          </figure>
-        ) : null}
-
-        <div className="mt-8 grid gap-5 lg:grid-cols-3">
+        <div className="grid gap-5 lg:grid-cols-3">
           {jobs.map((job) => (
             <Link
               key={job.href}
@@ -95,12 +43,80 @@ function SolutionsIndex() {
                   {job.name}
                   <ArrowRight className="size-4 text-teal opacity-0 transition group-hover:opacity-100" />
                 </h2>
-                <p className="mt-2 text-sm text-muted">
-                  {lens?.lines[job.href] ?? job.lede}
-                </p>
+                <p className="mt-2 text-sm text-muted">{job.lede}</p>
               </div>
             </Link>
           ))}
+        </div>
+
+        <div className="mt-14">
+          <p className="text-xs font-bold tracking-[0.22em] text-navy uppercase">
+            Where this shows up
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2" role="tablist" aria-label="Markets">
+            {verticalUseCases.map((item) => {
+              const selected = item.name === vertical.name;
+              return (
+                <button
+                  key={item.name}
+                  type="button"
+                  role="tab"
+                  aria-selected={selected}
+                  onClick={() => setName(item.name)}
+                  className={
+                    selected
+                      ? "rounded-full bg-navy px-4 py-2 text-sm font-bold text-white"
+                      : "rounded-full bg-cool px-4 py-2 text-sm font-bold text-navy hover:bg-navy hover:text-white"
+                  }
+                >
+                  {item.name}
+                </button>
+              );
+            })}
+          </div>
+
+          <h2 className="mt-10 text-3xl">Six key use cases in {vertical.name}.</h2>
+          <p className="mt-3 max-w-2xl text-muted">{vertical.lede}</p>
+
+          {vertical.image ? (
+            <figure className="mt-8 overflow-hidden rounded-lg bg-ink shadow-[var(--shadow-border)]">
+              <div className="relative h-64">
+                <img
+                  src={vertical.image}
+                  alt={vertical.imageAlt ?? ""}
+                  className="media size-full object-cover object-center"
+                />
+                {vertical.name === "Logistics" ? null : (
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 z-10 bg-navy/45 mix-blend-multiply"
+                  />
+                )}
+              </div>
+              {vertical.proof ? (
+                <figcaption className="px-4 py-3 text-sm">
+                  <span className="font-bold tracking-[0.18em] text-teal uppercase">
+                    {vertical.proof}
+                  </span>
+                </figcaption>
+              ) : null}
+            </figure>
+          ) : null}
+
+          <div
+            role="tabpanel"
+            className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            {vertical.cases.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-lg bg-surface p-6 shadow-[var(--shadow-border)]"
+              >
+                <h3 className="text-lg">{item.title}</h3>
+                <p className="mt-2 text-sm text-muted">{item.body}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </Section>
       <CtaBand />

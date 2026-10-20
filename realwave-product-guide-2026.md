@@ -27,7 +27,7 @@ Parent: **Realwave is a product of ePlus.** The moat is not the camera. It is a 
 
 Audience: IT, security / GSOC, and operations leaders. Verticals on the site: Retail, Logistics, Transit, Campus, Healthcare, Financial, SLED.
 
-Contact for the 2026 site: **john@realwave.com**. Vue trial / cloud: **https://vue.realwave.io/**. Public site: realwave.io (preview may be a Vercel URL; do not treat a preview URL as the brand domain).
+Contact for the 2026 site: **realwave@eplus.com**. Vue trial / cloud: **https://vue.realwave.io/**. Public site: realwave.io (preview may be a Vercel URL; do not treat a preview URL as the brand domain).
 
 ---
 
@@ -107,6 +107,7 @@ OT fusion, now:
 - **POS** — 167+ systems. Named on the site: Micros, Aloha, Radiant, Ruby, Gilbarco, Sicom, PAR.
 - **Access** — IMRON; door events on the same timeline as video.
 - **Rules** — exception workflows that bookmark, notify, and escalate. Not a detector demo.
+- **Also named on the site:** ATMs, parking gates, scales, safes, mass notification, two-way audio.
 
 Standard models are part of the Intelligence engagement. Custom model training is scoped work under Operate, not a surprise SKU.
 
@@ -147,7 +148,7 @@ Say them as the open stack, not as a logo wall that implies exclusivity.
 - Sensors: Quanergy
 - Compute: NVIDIA, Velasea
 - Analytics engines used inside Intelligence: VCA, CVEDIA, Vaxtor
-- Physical security / access: IMRON, DMP
+- Physical security / access: IMRON, DMP, Singlewire (mass notification), Critical Response Group
 - Infrastructure conversation (Operate, not a camera SKU): NVIDIA, Nutanix, NetApp, Cisco, Palo Alto
 
 ---

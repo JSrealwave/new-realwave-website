@@ -1,12 +1,18 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
+  AudioLines,
+  Banknote,
   Bell,
   CarFront,
   DoorOpen,
+  Megaphone,
   PersonStanding,
   Receipt,
+  Scale,
   ScanFace,
   ScanSearch,
+  SquareParking,
+  Vault,
   type LucideIcon,
 } from "lucide-react";
 import { CtaBand } from "@/components/marketing/CtaBand";
@@ -32,6 +38,12 @@ const integrations: { icon: LucideIcon; label: string }[] = [
   { icon: Receipt, label: "POS" },
   { icon: DoorOpen, label: "Access" },
   { icon: Bell, label: "Alarms" },
+  { icon: Banknote, label: "ATMs" },
+  { icon: SquareParking, label: "Parking gates" },
+  { icon: Scale, label: "Scales" },
+  { icon: Vault, label: "Safes" },
+  { icon: Megaphone, label: "Mass notification" },
+  { icon: AudioLines, label: "2-way audio" },
 ];
 
 const proofs = [
@@ -198,24 +210,34 @@ function IntelligencePage() {
       </Section>
 
       <Section>
-        <p className="text-xs font-bold tracking-[0.22em] text-navy uppercase">
-          Tailored, not one-size
-        </p>
-        <h2 className="mt-2 max-w-2xl text-3xl sm:text-4xl">
-          A firmware pack cannot be your loss-prevention program.
-        </h2>
-        <p className="mt-4 max-w-2xl text-slate">
-          One-size analytics ship the same detector pack to every door. Tailored
-          workflows start from the exception you actually care about — an unpaid
-          refund, a trailer that does not match the manifest, a forced door at
-          2 a.m. — and assemble models, joins, and rules until that exception is
-          reliable. That is why Intelligence is not inside Vue and not inside
-          the camera.
-        </p>
-        <blockquote className="mt-8 max-w-2xl border-l-2 border-teal pl-5 text-lg text-ink">
-          “No human on refund” has caught 60%+ of cashier shrink in a production
-          site we can discuss in a demo. It is a result, not a guarantee.
-        </blockquote>
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div>
+            <p className="text-xs font-bold tracking-[0.22em] text-navy uppercase">
+              Tailored, not one-size-fits-all
+            </p>
+            <h2 className="mt-2 text-3xl sm:text-4xl">
+              A firmware pack cannot be your loss-prevention program.
+            </h2>
+            <p className="mt-4 text-slate">
+              One-size-fits-all analytics ship the same detector to every door.
+              The refund that matters at this store is not the detector’s
+              problem. A tailored workflow starts from that exception — an unpaid
+              refund, a trailer that does not match the manifest, a forced door
+              at 2 a.m. — and joins the camera to the system that already has
+              the transaction. The result is a case, not another clip to scrub.
+            </p>
+            <blockquote className="mt-8 border-l-2 border-teal pl-5 text-lg text-ink">
+              “No human on refund” has caught 60%+ of cashier shrink in a
+              production site we can discuss in a demo. It is a result, not a
+              guarantee.
+            </blockquote>
+          </div>
+          <img
+            src="/media/exception-story.png"
+            alt="Exception report linking repeated refunds to the register camera and a resolved case"
+            className="w-full rounded-lg"
+          />
+        </div>
       </Section>
 
       <Section className="bg-surface">
@@ -226,10 +248,9 @@ function IntelligencePage() {
             </p>
             <h2 className="mt-2 text-3xl">Natural language across cameras</h2>
             <p className="mt-4 text-slate">
-              VLM / NLP investigation is in beta. You can ask, we will not sell
-              it as a finished SKU. It sits on the same event fabric as Track,
-              Face, Plate, and Action — the path to the harness and agent cluster, not
-              a rebrand of DIVE.
+              You can ask across cameras. It is in beta, and it is not something
+              we sell as finished. It uses the same events as Track, Face, Plate,
+              and Action.
             </p>
           </div>
           <div>
@@ -237,9 +258,9 @@ function IntelligencePage() {
               Model partners
             </p>
             <p className="mt-4 text-slate">
-              VCA, CVEDIA, Vaxtor, NVIDIA — proof that Intelligence is a pipeline,
-              not a single frozen model. Edge silicon from Intel, NVIDIA, Hailo,
-              and ARM is placement. Partners do not replace the layer.
+              VCA, CVEDIA, Vaxtor, and NVIDIA plug into the pipeline. They do not
+              replace the workflow we engineer with you. The processors — Intel,
+              NVIDIA, Hailo, and ARM — are where that pipeline runs.
             </p>
           </div>
         </div>

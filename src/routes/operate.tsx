@@ -11,7 +11,7 @@ function OperatePage() {
       <PageHero
         kicker="Operate"
         title="Your instance. Watched."
-        lede="Not a shared gadget cloud and not a SOW for extra hours. Private Realwave instances, hybrid placement, health, workflows, and 24/7 with a bench of customer-facing engineers."
+        lede="Not a shared cloud and not a stack of extra services hours. Private Realwave instances, hybrid placement, health, workflows, and 24/7 with a bench of customer-facing engineers."
         shot={{
           src: "/media/operate-dashboard.jpg",
           alt: "Program dashboard of sales, loyalty, and item mix for an east region",
@@ -30,7 +30,7 @@ function OperatePage() {
           {[
             {
               title: "Private instances",
-              body: "Dedicated, not a tenancy you share with every other customer. Isolation for finance, healthcare, campus, and anyone who will not put video on a one-size public cloud.",
+              body: "Dedicated, not a system you share with every other customer. Isolation for finance, healthcare, campus, and anyone who will not put video on a one-size-fits-all public cloud.",
             },
             {
               title: "Hybrid placement",
@@ -41,8 +41,8 @@ function OperatePage() {
               body: "Pipeline lag, dropped inference, storage saturation, model drift. Alerts to the people who own the exception. Archive that still processes, not a cold tape.",
             },
             {
-              title: "Dashboards, honestly",
-              body: "KPI boards exist today and we build them per program — sales, loyalty, exceptions, occupancy. The screenshot above is one of those. The out-of-box board is not the product.",
+              title: "Dashboards",
+              body: "Boards for the program you actually run — sales, loyalty, exceptions, occupancy. Built for that program, not a generic board for every site.",
             },
           ].map((c) => (
             <article
@@ -79,23 +79,33 @@ function OperatePage() {
       </Section>
 
       <Section>
-        <p className="text-xs font-bold tracking-[0.22em] text-navy uppercase">
-          Modern stack
-        </p>
-        <h2 className="mt-2 max-w-2xl text-3xl sm:text-4xl">
-          Agents will need infrastructure that recorders never did.
-        </h2>
-        <p className="mt-4 max-w-2xl text-slate">
-          Process-while-record plus investigation across cameras is a different
-          I/O shape than a VMS on spinning disk. GPU, all-flash, and a fabric
-          that can take the query load belong next to this platform — NVIDIA,
-          Nutanix, NetApp and the rest of the ePlus bench. That is a design
-          conversation, not a benchmark we will invent.
-        </p>
-        <p className="mt-4 max-w-2xl text-sm text-muted">
-          A thousand customer-facing engineers, Elite 150 on the CRN 2026 MSP
-          500, is the Operate story. The cameras were never the moat.
-        </p>
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div>
+            <p className="text-xs font-bold tracking-[0.22em] text-navy uppercase">
+              Modern stack
+            </p>
+            <h2 className="mt-2 text-3xl sm:text-4xl">
+              Agents will need infrastructure that recorders never did.
+            </h2>
+            <p className="mt-4 text-slate">
+              Process while you record, plus investigation across cameras, is a
+              different load than a recorder on spinning disk. GPU, all-flash,
+              and a network that can take the queries belong next to this
+              platform — NVIDIA, Nutanix, NetApp, Cisco, and the rest of the
+              ePlus bench. We size that with you. We do not publish a benchmark
+              that pretends every site is the same.
+            </p>
+            <p className="mt-4 text-sm text-muted">
+              A thousand customer-facing engineers, Elite 150 on the CRN 2026 MSP
+              500, is who runs Operate. The cameras were never the advantage.
+            </p>
+          </div>
+          <img
+            src="/media/ucs.png"
+            alt="Cisco UCS chassis"
+            className="w-full"
+          />
+        </div>
       </Section>
 
       <CtaBand title="If it only records, we did not Operate it." />

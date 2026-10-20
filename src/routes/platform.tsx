@@ -47,11 +47,11 @@ function PlatformPage() {
             </p>
             <h2 className="mt-2 text-3xl">Not a camera firmware. Not a VMS checkbox.</h2>
             <p className="mt-4 text-slate">
-              Detectors that ship frozen in the camera or as a server SKU are
-              convenient, and they are one-size. Vue can consume those events.
-              Realwave Intelligence is the layer we design with you: which
-              models, which POS and access joins, which rules, who updates them.
-              Same operator glass. Different lifecycle.
+              Detectors that ship frozen in the camera, or as a pack on the server,
+              are convenient, and they are one-size-fits-all. Vue can show those
+              events. Realwave Intelligence is the layer we design with you:
+              which models, which POS and access joins, which rules, and who
+              updates them. Same operator screen. A lifecycle you can change.
             </p>
           </div>
           <div className="rounded-lg bg-cool p-8">
@@ -60,13 +60,13 @@ function PlatformPage() {
             </p>
             <ul className="mt-4 space-y-4 text-slate">
               <li>
-                <strong className="text-ink">Edge harness.</strong> Use the best
-                model for this camera, this scene, this accelerator — without a
-                forklift.
+                <strong className="text-ink">Edge harness.</strong> The best
+                model for this camera, this scene, and this processor — without
+                replacing the camera.
               </li>
               <li>
                 <strong className="text-ink">Natural-language investigation.</strong>{" "}
-                Ask across cameras and time. Labeled beta, not a SKU.
+                Ask across cameras and time. In beta. Not something we sell as finished.
               </li>
               <li>
                 <strong className="text-ink">Native operator clients.</strong>{" "}
@@ -74,8 +74,7 @@ function PlatformPage() {
               </li>
             </ul>
             <p className="mt-6 text-sm text-muted">
-              Direction, not a product page. What you can buy today is Edge, Vue,
-              Intelligence, and Operate.
+              Coming. What you can buy today is Edge, Vue, Intelligence, and Operate.
             </p>
           </div>
         </div>

@@ -192,7 +192,7 @@ export const vueFeatureGroups: VueFeatureGroup[] = [
       },
       {
         title: "Merge systems",
-        body: "Combine or expand systems without a forklift. A system can hold an unlimited number of servers.",
+        body: "Combine or expand systems without replacing the servers you already have. A system can hold an unlimited number of servers.",
       },
     ],
   },
