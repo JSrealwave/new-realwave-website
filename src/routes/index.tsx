@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { CtaBand } from "@/components/marketing/CtaBand";
-import { CustomerLogos } from "@/components/marketing/CustomerLogos";
 import { MonitorWall } from "@/components/marketing/MonitorWall";
 import { ProductShot } from "@/components/marketing/ProductShot";
 import { StackStrip } from "@/components/marketing/StackStrip";
@@ -157,12 +156,6 @@ function Home() {
             * 5 million cameras is a Network Optix platform figure, not a Realwave
             installed-base claim.
           </p>
-        </div>
-      </section>
-
-      <section className="bg-surface">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
-          <CustomerLogos kicker="Trusted in production" />
         </div>
       </section>
 

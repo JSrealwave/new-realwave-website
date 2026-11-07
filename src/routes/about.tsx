@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CtaBand } from "@/components/marketing/CtaBand";
-import { CustomerLogos } from "@/components/marketing/CustomerLogos";
 import { PageHero, Section } from "@/components/layout/PageHero";
 import { Button } from "@/components/ui/button";
 
@@ -15,7 +14,7 @@ function AboutPage() {
         lede="Intelligent video, sold and operated by an Elite 150 firm on the CRN 2026 MSP 500 — not a camera startup asking you to rip out the last decade."
       />
       <Section>
-        <div className="grid gap-10 lg:grid-cols-2">
+        <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
             <h2 className="text-3xl">What we are</h2>
             <p className="mt-4 text-slate">
@@ -33,7 +32,11 @@ function AboutPage() {
               <Link to="/contact">Talk to us</Link>
             </Button>
           </div>
-          <CustomerLogos kicker="In production" compact />
+          <img
+            src="/media/about-data-center.jpg"
+            alt="Operator at a control-room desk facing a wall of system screens"
+            className="media w-full rounded-lg object-cover shadow-[var(--shadow-border)]"
+          />
         </div>
       </Section>
       <CtaBand />
