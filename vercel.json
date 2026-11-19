@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/assets/logo-wordmark.png",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/:path((?!assets/)(?!__grok/)(?!Realtime persistent scene agents\\.png$)(?!Realtime%20persistent%20scene%20agents\\.png$).+)",
+      "destination": "/",
+      "permanent": false
+    }
+  ]
+}

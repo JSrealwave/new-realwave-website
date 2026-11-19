@@ -10,6 +10,8 @@ import { nitro } from "nitro/vite";
 import { grokPwaPlugin } from "./scripts/grok-pwa-plugin.mjs";
 // @ts-expect-error JS plugin alongside the TS vite config
 import { appEnvPlugin } from "./scripts/app-env-plugin.mjs";
+// @ts-expect-error JS plugin alongside the TS vite config
+import { holdRedirectTarget } from "./scripts/public-hold.mjs";
 import { isMigrationFile } from "./scripts/migration-plan.mjs";
 
 /** The files `src/lib/db.ts` globs — same directory, same non-recursive scope. */
@@ -85,11 +87,15 @@ function authPopupPlugin(): Plugin {
           }
 
           const host = String(
-            req.headers["x-forwarded-host"] ?? req.headers.host ?? "localhost:8080",
+            req.headers["x-forwarded-host"] ??
+              req.headers.host ??
+              "localhost:8080",
           );
           const proto = String(
             req.headers["x-forwarded-proto"] ??
-              ((req.socket as { encrypted?: boolean } | undefined)?.encrypted ? "https" : "http"),
+              ((req.socket as { encrypted?: boolean } | undefined)?.encrypted
+                ? "https"
+                : "http"),
           );
           const requestHeaders = new Headers();
           for (const [key, value] of Object.entries(req.headers)) {
@@ -109,7 +115,9 @@ function authPopupPlugin(): Plugin {
             headers: requestHeaders,
           });
 
-          const mod = (await server.ssrLoadModule("/src/lib/auth/popup.server.ts")) as {
+          const mod = (await server.ssrLoadModule(
+            "/src/lib/auth/popup.server.ts",
+          )) as {
             handleAuthPopupRequest: (req: Request) => Promise<Response>;
           };
           const response = await mod.handleAuthPopupRequest(request);
@@ -142,6 +150,41 @@ function authPopupPlugin(): Plugin {
   };
 }
 
+/**
+ * Send every public URL except `/` and the scene image back to `/`.
+ * Registered inside `configureServer` / `configurePreviewServer` (not a
+ * returned post-hook) so it runs before Vite serves `public/`.
+ */
+function publicHoldPlugin(): Plugin {
+  const handler: Plugin["configureServer"] = (server) => {
+    server.middlewares.use((req, res, next) => {
+      if (req.headers.upgrade) {
+        next();
+        return;
+      }
+      const method = (req.method ?? "GET").toUpperCase();
+      if (method !== "GET" && method !== "HEAD") {
+        next();
+        return;
+      }
+      const target = holdRedirectTarget(req.url);
+      if (!target) {
+        next();
+        return;
+      }
+      res.statusCode = 307;
+      res.setHeader("location", target);
+      res.setHeader("cache-control", "no-store");
+      res.end();
+    });
+  };
+  return {
+    name: "public-hold",
+    configureServer: handler,
+    configurePreviewServer: handler,
+  };
+}
+
 // `0.0.0.0:8080` is the live-preview contract — don't change host/port.
 // The dev server starts once `src/router.tsx` and `src/routes/` exist — see
 // AGENTS.md § "First scaffold".
@@ -158,6 +201,7 @@ export default defineConfig(({ command, isPreview }) => ({
   },
   resolve: { tsconfigPaths: true },
   plugins: [
+    publicHoldPlugin(),
     pgliteBootstrapPlugin(),
     // Before tanstackStart so /auth/popup never falls through to the SPA.
     authPopupPlugin(),
